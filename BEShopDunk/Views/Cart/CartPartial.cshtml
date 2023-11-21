@@ -1,0 +1,20 @@
+﻿<a href="@Url.Action("GetCartInfo", "Cart")" style="text-decoration:none; color: black; font-weight: bold"><img class="unique" src="~/Content/Images/icon-gio-hang.png" />
+  <div class="unique-number">@ViewBag.TotalNumber</div> </a>
+<style>
+    .unique {
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        left: -10px;
+        top: 8px;
+    }
+    a{
+        position:relative;
+    }
+    .unique-number{
+        position:absolute;
+        left:7px;
+        top:1px;
+    }
+   
+</style>

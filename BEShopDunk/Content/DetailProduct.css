@@ -1,0 +1,178 @@
+﻿.wrapper-detail{
+    width:100%;
+    max-width:1185px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+}
+.detail-picture{
+    position:sticky;
+    top:66px;
+    float:left;
+    width:49%;
+}
+.gallery{
+    float:left;
+    width:100%;
+}
+.picture{
+    position:relative;
+    max-width:100%;
+    margin:0 auto 10px;
+    overflow:hidden;
+    height:500px
+}
+.picture img{
+    position:absolute;
+    top:0;
+    right:0;
+    max-width:100%;
+    max-height:100%;
+    width:350px;
+    height:auto;
+    float:right;
+    object-fit:cover;
+}
+.overview{
+    width:47.5%;
+    float:right;
+}
+.price {
+    color: #0066CC;
+    font-size: 24px;
+    font-weight: bold;
+    margin:0;
+    margin-bottom:15px;
+}
+.Uudai {
+    border: 1px solid #EBEBEB;
+}
+/*checkbox*/
+/* Thiết lập màu chung cho checkbox */
+input[type="checkbox"] {
+    appearance: none; 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    width: 20px; 
+    height: 20px;
+    border: 2px solid #3498db; 
+    
+    border-radius: 50%; 
+    cursor: pointer; 
+}
+input[name="sample-checkbox1"]{
+    background-color:black;
+}
+input[name="sample-checkbox2"] {
+    background-color: #efcfd2;
+}
+input[name="sample-checkbox3"] {
+    background-color: #b5d999;
+}
+input[name="sample-checkbox4"] {
+    background-color: #88adc6;
+}
+
+    /* Thiết lập màu của checkbox khi được chọn */
+input[name="sample-checkbox1"]:checked {
+    background-color: black;
+    border: 2px solid #ffffff;
+}
+input[name="sample-checkbox2"]:checked {
+    background-color: #efcfd2;
+    border: 2px solid #ffffff;
+}
+input[name="sample-checkbox3"]:checked {
+    background-color: #b5d999;
+    border: 2px solid #ffffff;
+}
+input[name="sample-checkbox4"]:checked {
+    background-color: #88adc6;
+    border: 2px solid #ffffff;
+}
+
+    /* Thiết lập kiểu dáng của checkbox khi di chuột qua */
+    input[type="checkbox"]:hover {
+        background-color: #f2f2f2; 
+    }
+.tieude {
+    color: #e03e2d;
+    font-weight:bolder;
+}
+.button1 {
+    width: 100%;
+    border-radius: 4px;
+    line-height: 48px;
+    font-size: 15px;
+    background-color: #0d6efd;
+    color:white;
+    padding:10px 215px;
+    text-decoration:none;
+}
+.tragop{
+    width:100%;
+    display:flex;
+    justify-content:space-between; gap:10px;
+    align-items:center;
+}
+.tragop1 {
+    width: 400px;
+    border-radius: 5px;
+    border: 1px solid #0066cc;
+    background-color: white;
+    color: #0066cc;
+    height:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:14px;
+    font-weight:400;
+}
+.end {
+    border: 1px solid #EBEBEB;
+    border-radius:8px;
+    padding:15px 16px;
+    line-height:20px;
+    margin-top:17px;
+}
+    .end p {
+        font-size: 13px;
+        line-height: 24px;
+        color: #515154;
+        display:flex;
+    }
+    .noidung p{
+        font-size:12px;
+    }
+.nav-pills>li{
+    width:200px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:50px;
+    border:1px solid #0066CC;
+    color:#0066CC;
+    border-radius:8px;
+    font-weight:400;
+}
+.nav-pills{
+    gap:15px;
+}
+.big-image{
+    margin-top:200px;
+    margin-bottom:100px;
+}
+.big-image img{
+    width:100%;
+    padding:10px;
+}
+.big-image2 {
+    width: 80%;
+    border-radius: 8px;
+    background-color: #DCDCDC;
+}
+.big-image2 img{
+    width:70%;
+}

@@ -1,0 +1,1 @@
+ALTER TABLE [dbo].[Customer] ADD PassCus nchar(50) not null

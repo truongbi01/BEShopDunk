@@ -1,0 +1,45 @@
+﻿@using BEShopDunk.Models
+@model List<Category>
+<style>
+    #div-u {
+       
+        display:flex;
+        background-color: #515154;
+        text-decoration: none;
+        margin:0;
+        padding:0;
+        gap:20px;
+        width:fit-content;
+    }
+
+    .div-cate {
+        height: fit-content;
+        width: 100%;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        font-size: x-large;
+        padding:0;
+        margin:0;
+    }
+    .div-cate:hover {
+        background-color: #D3D3D3;
+    }
+
+        a:hover {
+            text-decoration: none;
+        }
+</style>
+<ul style="list-style-type:none" id="div-u">
+    @{
+        foreach (var item in Model)
+        {
+            <li class="div-cate">
+                @Html.ActionLink(item.NameCate, "Index", "CustomerProducts", new { category = item.IDCate.Trim() }, "")
+            </li>
+            
+        }
+    }
+</ul>

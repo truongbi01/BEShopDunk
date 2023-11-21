@@ -1,0 +1,54 @@
+﻿@model BEShopDunk.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<div style="margin: 10px auto; width: 70%;">
+    <h2 style="text-align: center">CHI TIẾT SẢN PHẨM</h2>
+    <div>
+        <hr />
+
+        <dl class="dl-horizontal">
+            <dt>
+                HÌNH MINH HỌA
+            </dt>
+            <dd>
+                <img src="~/Content/Images/@Model.ImagePro" />
+            </dd>
+            <dt>
+                TÊN SẢN PHẨM
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NamePro)
+            </dd>
+            <dt>
+                MÔ TẢ
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DecriptionPro)
+            </dd>
+            <dt>
+                GIÁ
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <dt>
+                NHÓM SẢN PHẨM
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Category1.NameCate)
+            </dd>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ProductID }, new
+        {
+            @class
+        = "btn btn-success"
+        }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

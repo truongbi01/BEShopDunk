@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/MainHome.css" />
+    <meta name="viewport" content="width=device-width, intitial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="header-lower">
+                <div class="header-logo">
+                    <a href="~/Home/HomeMainContent">
+                        <img src="https://shopdunk.com/images/thumbs/0012445_Logo_ShopDunk.png" />
+                    </a>
+                </div>
+                <div class="header-menu">
+                    <ul class="top-menu notmobile">
+                        <li class="category-menu-items"><a href="~/CustomerProducts?category=IP">iPhone</a></li>
+                        <li class="category-menu-items"><a href="#">iPad</a></li>
+                        <li class="category-menu-items"><a href="~/CustomerProducts?category=LP">Laptop</a></li>
+                        <li class="category-menu-items"><a href="~/CustomerProducts?category=WA">Watch</a></li>
+                        <li class="category-menu-items"><a href="#">Âm thanh</a></li>
+                        <li class="category-menu-items"><a href="~/CustomerProducts?category=AC">Phụ kiện</a></li>                  
+                    </ul>
+                </div>
+                <div class="top-menu notmobile"></div>
+                <div class="header-links-wrapper">
+                    <div class="search-icon" style="font-size:14px;">
+                        <i class="fa-solid fa-magnifying-glass" style="color: #141415;"></i>
+                        <div class="search-box">
+                            @using (Html.BeginForm("SearchNameOption", "CustomerProducts", FormMethod.Post, new { @class = "search-form" }))
+                            {
+                                <input type="text" name="TenSp" placeholder="Search" class="input" />
+                                <input type="submit" name="Search" class="input"/>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="header-link" style="position:relative">
+                        @Html.Action("CartPartial", "Cart")
+                    </div>
+                    <div class="account">
+                        <i class="fa-regular fa-user" style="color: #000000; font-size:20px"></i>
+                        <ul class="sub-menu">
+                            <li><a href="~/Users/Register">Tạo tài khoản ngay</a></li>
+                            <li><a href="~/Users/Login">Đăng nhập</a></li>
+                            <li><a href="@Url.Action("LogOutUser","Users")">Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                    <div class="box-small-menu">
+                        @if (Session["NameCus"] == null)
+                        {
+                            <span>Hello</span>
+                        }
+                        else
+                        {
+                            <span><text>Hello </text>@Session["NameCus"]</span>
+                        }
+                    </div>
+                    <div class="flag">
+                        <div class="flag-img">
+                            <img src="~/Content/Images/vnflag.png" />
+                        </div>
+                        <div class="flag-img">
+                            <img src="~/Content/Images/flag.png" />
+                        </div>                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            @RenderBody()
+        </div>
+        <div class="footer">
+            <div class="footer-upper">
+                <div class="footer-block follow-us">
+                    <div class="header-logo">
+                        <a href="">
+                            <img src="https://shopdunk.com/images/thumbs/0012445_Logo_ShopDunk.png" />
+                        </a>
+                    </div>
+                    <div class="topic-block">
+                        <p class="ft_gioithieu">
+                            Năm 2020, ShopDunk trở thành đại lý ủy quyền của Apple. Chúng tôi phát triển chuỗi cửa hàng tiêu chuẩn và Apple Mono Store nhằm mang đến trải nghiệm tốt nhất về sản phẩm và dịch vụ của Apple cho người dùng Việt Nam.
+                        </p>
+                    </div>
+                </div>
+                <div class="footer-block information">
+                    <div class="title">
+                        <strong>Thông tin</strong>
+                    </div>
+                    <ul class="list">
+                        <li><a href="">Tin tức</a></li>
+                        <li><a href="">Giới thiệu</a></li>
+                        <li><a href="">Check IMEI</a></li>
+                        <li><a href="">Phương thức thanh toán</a></li>
+                        <li><a href="">Thuê điểm bán lẻ</a></li>
+                        <li><a href="">Bảo hành sửa chữa</a></li>
+                        <li><a href="">Tuyển dụng</a></li>
+                        <li><a href="">Đánh giá chất lượng,khiếu nại</a></li>
+                    </ul>
+                </div>
+                <div class="footer-block customer-service">
+                    <div class="title">
+                        <strong>Chính sách</strong>
+                    </div>
+                    <ul class="list">
+                        <li><a href="">Thu cũ đổi mới</a></li>
+                        <li><a href="">Giao hàng</a></li>
+                        <li><a href="">Giao hàng( Zalo Pay)</a></li>
+                        <li><a href="">Hủy giao dịch</a></li>
+                        <li><a href="">Đổi trả</a></li>
+                        <li><a href="">Bảo hành</a></li>
+                        <li><a href="">Dịch vụ</a></li>
+                        <li><a href="">Giải quyết khiếu nại</a></li>
+                        <li><a href="">Bảo mật thông tin</a></li>
+                        <li><a href="">Hướng dẫn thanh toán qua VNPay</a></li>
+                    </ul>
+                </div>
+                <div class="footer-block my-account">
+                    <div class="title">
+                        <strong>Địa chỉ và liên hệ</strong>
+                    </div>
+                    <ul class="list">
+                        <li><a href="">Tài khoản của tôi</a></li>
+                        <li><a href="">Đơn đặt hàng</a></li>
+                        <li><a href="">Hệ thống cửa hàng</a></li>
+                        <li><a href="">Tìm store trên Google Map</a></li>
+                        <li><a href="">Mua hàng: 1900.6626</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-lower">
+                <div class="footer-info">
+                    <span class="footer-disclaimer">
+                        © 2016 Công ty Cổ Phần HESMAN Việt Nam GPDKKD: 0107465657 do Sở KH & ĐT TP. Hà Nội cấp ngày 08/06/2016 <br />
+                        Địa chỉ: Số 76 Thái Hà, phường Trung Liệt, quận Đống Đa, thành phố Hà Nội, Việt Nam <br />
+                        Đại diện pháp luật: PHẠM MẠNH HÒA | ĐT: 0247.305.9999 | Email: lienhe@shopdunk.com
+                    </span>
+                    <a href="">
+                        <img src="https://shopdunk.com/images/uploaded-source/Trang%20ch%E1%BB%A7/Bocongthuong.png" />
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

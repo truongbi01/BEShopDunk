@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+   .page-login{
+       max-width:1185px;
+       margin:auto;
+       width:100%;
+       padding:40px 15px 160px;
+       display:flex;
+   }
+   .login-img{
+       width:53%;
+      
+   }
+   .login-img img{
+       width:100%;
+   }
+   .page-login-main{
+       background-color:white;
+   }
+   /*check box quên mật khẩu và nhớ mật khẩu*/
+    .remember-pass{
+        display:flex;
+        justify-content:space-between;
+        padding:12px 0px 30px;
+    }
+    
+    .forgot-pass{
+        float:right;
+        display:inline-block;
+        width:auto;
+        margin-top:5px;
+       
+    }
+        .forgot-pass a {
+            color: #0066CC;
+            font-size: 14px;
+        }
+    .rem {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 24px;
+        color: #86868B;
+        margin:0;
+    }
+    #button-login {
+        width: 100%;
+
+        border-radius:8px;
+        line-height:48px;
+        font-size:15px;
+    }
+    #rememberPassword{
+        width:20px;
+        height:16px;
+    }
+</style>
+<div class="page-login-main">
+    <div class="page-login">
+        <div class="login-img">
+            <img src="~/Content/Images/img-loginpage.jpeg" />
+        </div>
+        <div style="margin: 10px auto; width: 40%;">
+            <h2 style="text-align: left">Đăng nhập</h2>
+            <h2 style="color: red;">@ViewBag.ThongBao</h2>
+            @using (Html.BeginForm("Login", "Users"))
+            {
+                @Html.ValidationSummary(true)
+                <div class="mb-3 mt-3">
+                    <label for="name" class="form-label" style="font-size:14px;">Tên đăng nhập:</label>
+                    <input type="text" class="form-control" id="name" name="NameCus" required>
+                </div>
+                <div class="mb-3">
+                    <label for="pwd" class="form-label"  style="font-size:14px;">Mật khẩu:</label>
+                    <input type="password" class="form-control" id="pwd" name="PassCus" required>
+                </div>
+                <div class="remember-pass">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="rememberPassword">
+                        <label for="rememberPassword" class="rem">Nhớ mật khẩu</label>
+                    </div>
+                    <div class="forgot-pass"><a href="#">Quên mật khẩu?</a></div>
+                </div>
+                <button type="submit" class="btn btn-primary" id="button-login">Đăng nhập</button>
+            }
+        </div>
+
+    </div>
+</div>
+

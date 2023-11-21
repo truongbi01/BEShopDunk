@@ -1,0 +1,104 @@
+﻿@model BEShopDunk.Models.Product
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/DetailProduct.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="container1">
+    <div class="wrapper-detail">
+        <div class="detail-picture">
+            <div class="gallery">
+                <div class="picture">
+                    <img src="~/Content/Images/@Model.ImagePro " />
+                </div>
+            </div>
+        </div>
+        <div class="overview">
+            <div class="wrapper-info">
+                <div class="product-name">
+                    <h1>@Model.NamePro @Model.DecriptionPro</h1>
+                </div>
+                <div>
+                    <span class="price">@Model.Price<sup>đ</sup></span> <span style="text-decoration: line-through; font-size: 20px;">24.900.000<sup>đ</sup></span>
+                </div>
+                <div class="dungluong">
+                    @Model.DecriptionPro
+                </div>
+                <h4 style="font-size:20px">Màu sắc</h4>
+                <div class="color">
+                    <input type="checkbox" name="sample-checkbox1" />
+                    <input type="checkbox" name="sample-checkbox2" />
+                    <input type="checkbox" name="sample-checkbox3" />
+                    <input type="checkbox" name="sample-checkbox4" />
+                </div>
+                <div class="Uudai">
+                    <div style="font-weight:700;font-size:14px"><i class="fa-solid fa-gift fa-xs" style="color: #101113;"></i> Ưu đãi</div>
+                    <div class="tieude"><h5>I.Ưu đãi thanh toán</h5></div>
+                    <div class="noidung">
+                        <p><i class="fa-solid fa-circle-check" style="color: #13e72c;"></i> Giảm tới <span style="font-weight:400">500.000đ</span> qua cổng thanh toán</p>
+                        <p><i class="fa-solid fa-circle-check" style="color: #13e72c;"></i> Giảm tới <span style="font-weight:400">2.000.000đ</span> khi thanh toán qua thẻ ứng dụng</p>
+                    </div>
+                    <div class="tieude"><h5>II.Ưu đãi trả góp</h5></div>
+                    <div class="noidung">
+                        <p><i class="fa-solid fa-circle-check" style="color: #13e72c;"></i> Ưu đãi tới <span style="font-weight:400">500.000đ</span> khi thanh toán trả góp </p>
+                    </div>
+                    <div class="tieude"><h5>III.Thu cũ đổi mới lên đời @Model.NamePro</h5></div>
+                    <div class="noidung">
+                        <p><i class="fa-solid fa-circle-check" style="color: #13e72c;"></i> Trợ giá đến <span style="font-weight:400">1.500.000đ</span> cho khách lên đời @Model.NamePro </p>
+                    </div>
+                    <div class="tieude"><h5>IV.Ưu đãi mua kèm @Model.NamePro</h5></div>
+                    <div class="noidung">
+                        <p>Mua kèm giảm sâu phụ kiện Apple</p>
+                        <p>Mua kèm giảm sâu phụ kiện Non Apple</p>
+                        <p><i class="fa-solid fa-circle-check" style="color: #13e72c;"></i> Giảm 10% khi mua Bảo hành tiêu chuẩn mở rộng (6 tháng, 12 tháng)</p>
+                        <p><i class="fa-solid fa-circle-check" style="color: #13e72c;"></i> Giảm 20% khi mua Bảo hành kim cương,  Bảo hành VIP (Rơi vỡ, vào nước)</p>
+                    </div>
+                    <div class="tieude">V.Ưu đãi cán bộ công nhân viên VietinBank,VietcomBank, VinFast</div>
+                    <div class="noidung">
+                        <p>Tặng voucher giảm giá <span style="font-weight:400">500.000đ</span></p>
+                    </div>
+                </div>
+                <a class="button1" style="text-align:center;" href="@Url.Action("AddToCart", "Cart", new {id = Model.ProductID })"> MUA NGAY </a>
+                <div class="tragop">
+                    <div class="tragop1">
+                        Trả góp
+                    </div>
+                    <div class="tragop1">
+                        <i class="fa-solid fa-rotate fa-xs" style="color: #0d3c8c;"></i> Thu cũ đổi mới
+                    </div>
+                </div>
+                <div class="end">
+                    <p><i class="fa-solid fa-circle-check" style="color: #1162ee;display:flex; align-items:center"></i>Bộ sản phẩm gồm: Hộp, Sách hướng dẫn, Cây lấy sim, Cáp Type C</p>
+                    <p><i class="fa-solid fa-circle-check" style="color: #1162ee; display: flex; align-items: center"></i>Bảo hành chính hãng 1 năm</p>
+                    <p><i class="fa-solid fa-circle-check" style="color: #1162ee; display: flex; align-items: center"></i>Giao hàng nhanh toàn quốc</p>
+                    <p><i class="fa-solid fa-circle-check" style="color: #1162ee; display: flex; align-items: center"></i>Gọi đặt mua <span style="color: #0066cc">1900.6626</span> (8:00-22:00)</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="wrapper-detail">
+        <div class="wrapper-detail-2">
+            <h1 style="font-weight:700">Gợi ý phụ kiện đi kèm</h1>
+            <ul class="nav nav-pills mb-3 nav-product-detail">
+                <li class="nav-item nav-product-detail-item">Mô tả sản phẩm</li>
+                <li class="nav-item nav-product-detail-item">So sánh</li>
+                <li class="nav-item nav-product-detail-item">Thông số kĩ thuật</li>
+                <li class="nav-item nav-product-detail-item">Chi tiết sản phẩm</li>
+                <li class="nav-item nav-product-detail-item">Hỏi đáp</li>
+            </ul>
+        </div>
+    </div>
+    <div class="big-image">
+        <img src="https://shopdunk.com/images/uploaded-source/compareiphone15/hero_large.png?1694035518952" />
+    </div>
+    <div class="wrapper-detail">
+        <div class="big-image2">
+            <img src="https://shopdunk.com/images/uploaded-source/compareiphone15/dynamic_island_large.png?1694035518950" />
+        </div>
+    </div>
+    @{ Html.RenderAction("PartialFooter","Home");}
+</div>
+
